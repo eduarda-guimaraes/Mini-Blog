@@ -4,7 +4,7 @@ Um projeto de blog simples, com layout profissional, desenvolvido em HTML, CSS, 
 
 ## 📌 Objetivo
 
-Montar um **template de blog estático**, com estrutura pronta para **consumir futuramente uma API REST** (a ser integrada com AngularJS). O conteúdo atual é fixo e simula os dados reais que serão consumidos.
+Montar um **template de blog estático**, com estrutura pronta para **consumir futuramente uma API REST**. O conteúdo atual é fixo e simula os dados reais que serão consumidos.
 
 ---
 
