@@ -1,0 +1,15 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.btn-leia-mais {
+    background-color: rgb(90, 137, 232); /* Altere aqui o RGB */
+    color: white;
+    border: none;
+  }
+
+  .btn-leia-mais:hover {
+    background-color: rgb(174, 201, 255); /* Cor ao passar o mouse */
+  }
