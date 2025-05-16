@@ -10,16 +10,16 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 </head>
 <body>
-  <!--navbar simples-->
+  <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">
         <i class="bi bi-cup-hot-fill me-2"></i>Json & Café
-    </span>
+      </span>
     </div>
   </nav>
 
-  <!-- descrição do blog -->
+  <!-- Descrição -->
   <header class="bg-light py-5 border-bottom mb-5">
     <div class="container text-center">
       <h1 class="display-4">Bem-vindo ao Json & Café</h1>
@@ -30,12 +30,19 @@
     </div>
   </header>
 
+  <!-- Cards de postagens -->
   <div class="container" ng-controller="Rest">
-    <div  class="row g-3" ng-repeat="publicacao in publicacoes">
-      <img src="{{ publicacao.thumbImage }}">
-      <h1> {{ publicacao.title }} </h1>
-      <p> {{ publicacao.description }} </p>
-      <!-- cards das postagens -->
+    <div class="row g-4">
+      <div class="col-md-4" ng-repeat="publicacao in publicacoes">
+        <div class="card h-100 shadow-sm">
+          <img ng-src="{{ publicacao.thumbImage }}" class="card-img-top" alt="{{ publicacao.title }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ publicacao.title }}</h5>
+            <p class="card-text">{{ publicacao.description }}</p>
+            <a href="post.html?id={{ publicacao.id }}" class="mt-auto btn btn-leia-mais">Ler mais</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
