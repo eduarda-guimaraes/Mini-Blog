@@ -29,8 +29,8 @@
     <div class="card" ng-if="publicacao">
       <img ng-src="{{ publicacao.thumbImage }}" class="card-img-top" alt="{{ publicacao.title }}">
       <div class="card-body">
-        <h5 class="card-title">{{ publicacao.title }}</h5>
-        <p class="card-text">{{ publicacao.description }}</p>
+        <h5 class="card-title text-primary text-center fs-3">{{ publicacao.title }}</h5>
+        <p class="card-text" style="text-indent: 2em;">{{ publicacao.description }}</p>
         <p class="card-text">{{ publicacao.content }}</p>
       </div>
     </div>
