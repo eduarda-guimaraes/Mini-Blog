@@ -1,8 +1,11 @@
-angular.module('blog', []);
+angular.module('blog').controller('Rest', function($scope, $http) {
+  $scope.publicacoes = [];
 
-angular.module('blog').controller('Rest', function($scope, $http){
-  $http.get('https://api-fake-blog.onrender.com/postagens/')
-    .success(function(data){
-      $scope.publicacoes = data;
+  $http.get('https://api-fake-blog.onrender.com/postagens')
+    .then(function(response) {
+      $scope.publicacoes = response.data;
+    })
+    .catch(function(error) {
+      console.error('Erro ao buscar publicações:', error);
     });
 });

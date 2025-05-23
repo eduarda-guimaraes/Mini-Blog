@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
+  <script src="app.js"></script>
+  <script src="post.js"></script>
 </head>
 <body ng-controller="PublicacaoController">
   <nav class="navbar navbar-dark bg-dark mb-4">
@@ -23,22 +25,22 @@
     </div>
   </nav>
 
-  <main class="container">
-    <article class="p-5 bg-light border rounded shadow-sm" ng-if="publicacao">
-      <h2>{{ publicacao.title }}</h2>
-      <img ng-src="{{ publicacao.thumbImage }}" alt="{{ publicacao.title }}" class="img-fluid mb-4" />
-      <p ng-bind-html="publicacao.description"></p>
-    </article>
-
-    <div class="alert alert-danger text-center" ng-if="!publicacao">
-      Publicação não encontrada.
+  <main class="container my-5">
+    <div class="card" ng-if="publicacao">
+      <img ng-src="{{ publicacao.thumbImage }}" class="card-img-top" alt="{{ publicacao.title }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ publicacao.title }}</h5>
+        <p class="card-text">{{ publicacao.description }}</p>
+        <p class="card-text">{{ publicacao.content }}</p>
+      </div>
+    </div>
+    <div ng-if="!publicacao">
+      <div class="alert alert-warning text-center">Publicação não encontrada.</div>
     </div>
   </main>
 
   <footer class="bg-dark text-white text-center py-3 mt-5">
     &copy; 2025 Json & Café
   </footer>
-
-  <script src="post.js"></script>
 </body>
 </html>

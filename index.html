@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR" ng-app="blog">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Json & Café</title>
+
+  <!-- Estilos -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-sanitize.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container-fluid">
@@ -24,13 +34,13 @@
     <div class="container text-center">
       <h1 class="display-4">Bem-vindo ao Json & Café</h1>
       <p class="lead mt-3">
-        Um espaço para devs que amam código, café e boas conversas! <br />
-         Pegue sua caneca e aproveite cada leitura!
+        Um espaço para devs que amam código, café e boas conversas! <br>
+        Pegue sua caneca e aproveite cada leitura!
       </p>
     </div>
   </header>
 
-  <!-- Cards de postagens -->
+  <!-- Cards -->
   <div class="container" ng-controller="Rest">
     <div class="row g-4">
       <div class="col-md-4" ng-repeat="publicacao in publicacoes">
@@ -38,18 +48,18 @@
           <img ng-src="{{ publicacao.thumbImage }}" class="card-img-top" alt="{{ publicacao.title }}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ publicacao.title }}</h5>
-            <p class="card-text">{{ publicacao.description }}</p>
-            <a href="post.html?id={{ publicacao.id }}" class="mt-auto btn btn-leia-mais">Ler mais</a>
+            <p class="card-text text-truncate" style="max-height: 3.6em; overflow: hidden;">{{ publicacao.description }}</p>
+            <a href="post.html?index={{ $index }}" class="mt-auto btn btn-leia-mais">Ler mais</a> 
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Rodapé -->
   <footer class="bg-dark text-white text-center py-3 mt-5">
     &copy; 2025 Json & Café
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
